@@ -969,10 +969,12 @@ static void ExtractAlphaParameters(uint16_t *eeData, paramsMLX90640 *mlx90640)
 
 //------------------------------------------------------------------------------
 
+#define COL 32
+#define ROW  24
 static void ExtractOffsetParameters(uint16_t *eeData, paramsMLX90640 *mlx90640)
 {
-    int occRow[24];
-    int occColumn[32];
+    int occRow[ROW];
+    int occColumn[COL];
     int p = 0;
     int16_t offsetRef;
     uint8_t occRowScale;
@@ -1036,7 +1038,7 @@ static void ExtractOffsetParameters(uint16_t *eeData, paramsMLX90640 *mlx90640)
 }
 
 //------------------------------------------------------------------------------
-
+/* Find out data 32 * 64 */
 static void ExtractKtaPixelParameters(uint16_t *eeData, paramsMLX90640 *mlx90640)
 {
     int p = 0;
@@ -1198,7 +1200,7 @@ static void ExtractKvPixelParameters(uint16_t *eeData, paramsMLX90640 *mlx90640)
 }
 
 //------------------------------------------------------------------------------
-
+/// Calculate the eeData 
 static void ExtractCPParameters(uint16_t *eeData, paramsMLX90640 *mlx90640)
 {
     float alphaSP[2];
@@ -1453,4 +1455,8 @@ static int IsPixelBad(uint16_t pixel,paramsMLX90640 *params)
     return 0;     
 }     
 
+static int dummy_function()
+{
+	/*Write you code for dummy purpose  */ 
+}
 //------------------------------------------------------------------------------
