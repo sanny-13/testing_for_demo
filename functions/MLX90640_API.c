@@ -37,7 +37,8 @@ static float GetMedian(float *values, int n);
 static int IsPixelBad(uint16_t pixel,paramsMLX90640 *params);
 static int ValidateFrameData(uint16_t *frameData);
 static int ValidateAuxData(uint16_t *auxData);
-  
+
+
 int MLX90640_DumpEE(uint8_t slaveAddr, uint16_t *eeData)
 {
      return MLX90640_I2CRead(slaveAddr, MLX90640_EEPROM_START_ADDRESS, MLX90640_EEPROM_DUMP_NUM, eeData);
@@ -1455,3 +1456,7 @@ static int IsPixelBad(uint16_t pixel,paramsMLX90640 *params)
 }     
 
 //------------------------------------------------------------------------------
+static int dummy_function()
+{
+	/* Write your code hear */
+}
