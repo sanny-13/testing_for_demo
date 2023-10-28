@@ -522,6 +522,7 @@ void MLX90640_CalculateTo(uint16_t *frameData, const paramsMLX90640 *params, flo
     }
 }
 
+#define DATA_SIZ  833
 //------------------------------------------------------------------------------
 
 void MLX90640_GetImage(uint16_t *frameData, const paramsMLX90640 *params, float *result)
@@ -544,7 +545,7 @@ void MLX90640_GetImage(uint16_t *frameData, const paramsMLX90640 *params, float 
     float kta;
     float kv;
     
-    subPage = frameData[833];
+    subPage = frameData[DATA_SIZE];
     vdd = MLX90640_GetVdd(frameData, params);
     ta = MLX90640_GetTa(frameData, params);
     
